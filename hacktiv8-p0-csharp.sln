@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hacktiv8-p0-csharp", "hacktiv8-p0-csharp\hacktiv8-p0-csharp.csproj", "{C8D31A5E-9DCC-44FC-9DB6-5D3129FB0709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hacktiv8-p0-csharp.tests", "hacktiv8-p0-csharp.tests\hacktiv8-p0-csharp.tests.csproj", "{F080F26C-FF30-4C8D-8781-E661278CCF2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8D31A5E-9DCC-44FC-9DB6-5D3129FB0709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D31A5E-9DCC-44FC-9DB6-5D3129FB0709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D31A5E-9DCC-44FC-9DB6-5D3129FB0709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D31A5E-9DCC-44FC-9DB6-5D3129FB0709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F080F26C-FF30-4C8D-8781-E661278CCF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F080F26C-FF30-4C8D-8781-E661278CCF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F080F26C-FF30-4C8D-8781-E661278CCF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F080F26C-FF30-4C8D-8781-E661278CCF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88EA5B75-1400-4AF7-8040-A427EFD859E6}
+	EndGlobalSection
+EndGlobal

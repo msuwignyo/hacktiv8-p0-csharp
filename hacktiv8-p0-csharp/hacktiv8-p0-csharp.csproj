@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>hacktiv8_p0_csharp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Week05\" />
+    <Folder Include="Week04\" />
+  </ItemGroup>
+
+</Project>
