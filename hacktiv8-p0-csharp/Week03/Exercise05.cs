@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Week 03 - Exercise 05
+// Palindrome
+// https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-palindrome.md
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +13,6 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static bool Palindrome(string kata)
         {
-            // TODO: https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-palindrome.md
 
             string temp = String.Empty;
 

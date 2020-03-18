@@ -1,16 +1,32 @@
-﻿using System;
+﻿// Week 03 - Exercise 09
+// Cari Mean
+// https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-cari-mean.md
+
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace hacktiv8_p0_csharp.Week03
 {
     public class Exercise09
     {
-        public static int CariMean(int[] arr)
+        public static double CariMean(int[] arr)
         {
-            // TODO: https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-cari-mean.md
+            double total = 0;
 
-            return 0;
+            foreach (int item in arr)
+            {
+                total += item;
+            }
+
+            //int temp = total / arr.Length;
+            return Math.Ceiling(total / arr.Length);
+        }
+
+        public static double CariMeanLinq(int[] arr)
+        {
+            return Math.Ceiling(arr.Average());
         }
     }
 }
