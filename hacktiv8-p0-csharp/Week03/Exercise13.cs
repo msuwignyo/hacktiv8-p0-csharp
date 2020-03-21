@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace hacktiv8_p0_csharp.Week03
 {
@@ -12,7 +11,41 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static int TargetTerdekat(char[] arr)
         {
-            return 0;
+            var indexO = new Queue<int>();
+            var indexX = new Queue<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Equals('o'))
+                {
+                    indexO.Enqueue(i);
+                }
+
+                if (arr[i].Equals('x'))
+                {
+                    indexX.Enqueue(i);
+                }
+            }
+
+            int maxValue = int.MaxValue;
+            foreach (var itemO in indexO)
+            {
+                foreach (var itemX in indexX)
+                {
+                    var temp = Math.Abs(itemO - itemX);
+                    if (temp < maxValue)
+                    {
+                        maxValue = temp;
+                    }
+                }
+            }
+
+            if (maxValue == int.MaxValue)
+            {
+                return 0;
+            }
+
+            return maxValue;
         }
     }
 }

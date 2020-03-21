@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace hacktiv8_p0_csharp
+﻿namespace hacktiv8_p0_csharp
 {
     public class Sample
     {

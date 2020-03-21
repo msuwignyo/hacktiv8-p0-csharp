@@ -2,9 +2,7 @@
 // Mengelompokkan Hewan
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-kelompok-hewan.md
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week03
 {
@@ -12,7 +10,12 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static string[][] GroupAnimals(string[] animals)
         {
-            return new string[][] { new string[] { "" } };
+            return animals
+                .OrderBy(animal => animal[0])
+                .GroupBy(
+                    animal => animal[0],
+                    (key, result) => result.ToArray()
+                ).ToArray();
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 using static hacktiv8_p0_csharp.Week03.Exercise12;
 

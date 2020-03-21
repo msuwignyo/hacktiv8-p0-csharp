@@ -2,9 +2,7 @@
 // Mengelompokkan Angka
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-kelompok-angka.md
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace hacktiv8_p0_csharp.Week03
 {
@@ -12,7 +10,23 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static int[][] MengelompokkanAngka(int[] arr)
         {
-            return new int[][] { new int[] { 0 } };
+            var even = new Queue<int>();
+            var odd = new Queue<int>();
+            var multipleOfThree = new Queue<int>();
+
+            foreach (int item in arr)
+            {
+                if (item % 3 == 0) { multipleOfThree.Enqueue(item); }
+                else if (item % 2 == 0) { even.Enqueue(item); }
+                else { odd.Enqueue(item); }
+            }
+
+            return new int[][]
+            {
+                even.ToArray(),
+                odd.ToArray(),
+                multipleOfThree.ToArray()
+            };
         }
     }
 }
