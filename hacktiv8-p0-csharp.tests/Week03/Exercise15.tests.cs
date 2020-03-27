@@ -11,27 +11,27 @@ namespace hacktiv8_p0_csharp.tests.Week03
         {
             yield return new object[]
             {
-                new string[] {"cacing", "ayam", "kuda", "anoa", "kancil"},
-                new string[][]
+                new[] {"cacing", "ayam", "kuda", "anoa", "kancil"},
+                new[]
                 {
-                    new string[] {"ayam", "anoa"},
-                    new string[] {"cacing"},
-                    new string[] {"kuda", "kancil"},
+                    new[] {"ayam", "anoa"},
+                    new[] {"cacing"},
+                    new[] {"kuda", "kancil"}
                 }
             };
             yield return new object[]
             {
-                new string[]
+                new[]
                 {
                     "cacing", "ayam", "kuda", "anoa", "kancil", "unta",
                     "cicak"
                 },
-                new string[][]
+                new[]
                 {
-                    new string[] {"ayam", "anoa"},
-                    new string[] {"cacing", "cicak"},
-                    new string[] {"kuda", "kancil"},
-                    new string[] {"unta"},
+                    new[] {"ayam", "anoa"},
+                    new[] {"cacing", "cicak"},
+                    new[] {"kuda", "kancil"},
+                    new[] {"unta"}
                 }
             };
         }

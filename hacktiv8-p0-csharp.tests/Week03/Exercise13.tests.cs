@@ -9,14 +9,17 @@ namespace hacktiv8_p0_csharp.tests.Week03
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { new char[] { ' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x' }, 3 };
-            yield return new object[] { new char[] { 'o', ' ', ' ', ' ', 'x', 'x', 'x' }, 4 };
-            yield return new object[] { new char[] { 'x', ' ', ' ', ' ', 'x', 'x', 'o', ' ' }, 1 };
-            yield return new object[] { new char[] { ' ', ' ', 'o', ' ' }, 0};
-            yield return new object[] { new char[] { ' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x' }, 2};
+            yield return new object[] {new[] {' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'}, 3};
+            yield return new object[] {new[] {'o', ' ', ' ', ' ', 'x', 'x', 'x'}, 4};
+            yield return new object[] {new[] {'x', ' ', ' ', ' ', 'x', 'x', 'o', ' '}, 1};
+            yield return new object[] {new[] {' ', ' ', 'o', ' '}, 0};
+            yield return new object[] {new[] {' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x'}, 2};
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public class Exercise13

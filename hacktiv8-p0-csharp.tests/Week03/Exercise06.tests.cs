@@ -9,14 +9,17 @@ namespace hacktiv8_p0_csharp.tests.Week03
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { 8, 9 };
-            yield return new object[] { 10, 11 };
-            yield return new object[] { 117, 121 };
-            yield return new object[] { 175, 181 };
-            yield return new object[] { 1000, 1001 };
+            yield return new object[] {8, 9};
+            yield return new object[] {10, 11};
+            yield return new object[] {117, 121};
+            yield return new object[] {175, 181};
+            yield return new object[] {1000, 1001};
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public class Exercise06

@@ -10,21 +10,14 @@ namespace hacktiv8_p0_csharp.Week02
     {
         public static bool XO(string str)
         {
+            var countX = 0;
+            var countO = 0;
 
-            int countX = 0;
-            int countO = 0;
-
-            foreach (char item in str)
+            foreach (var item in str)
             {
-                if (item == 'x')
-                {
-                    countX++;
-                }
+                if (item == 'x') countX++;
 
-                if (item == 'o')
-                {
-                    countO++;
-                }
+                if (item == 'o') countO++;
             }
 
             return countX == countO;

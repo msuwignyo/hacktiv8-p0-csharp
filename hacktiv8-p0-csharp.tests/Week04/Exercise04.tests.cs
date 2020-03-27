@@ -11,27 +11,27 @@ namespace hacktiv8_p0_csharp.tests.Week04
         {
             yield return new object[]
             {
-                new int[] { 10, 4, 5, 2, 4 },
+                new[] {10, 4, 5, 2, 4},
                 4
             };
             yield return new object[]
             {
-                new int[] { 5, 10, 10, 6, 5 },
+                new[] {5, 10, 10, 6, 5},
                 5
             };
             yield return new object[]
             {
-                new int[] { 10, 3, 1, 2, 5 },
+                new[] {10, 3, 1, 2, 5},
                 -1
             };
             yield return new object[]
             {
-                new int[] { 1, 2, 3, 3, 4, 5 },
+                new[] {1, 2, 3, 3, 4, 5},
                 3
             };
             yield return new object[]
             {
-                new int[] { 7, 7, 7, 7, 7 },
+                new[] {7, 7, 7, 7, 7},
                 -1
             };
         }

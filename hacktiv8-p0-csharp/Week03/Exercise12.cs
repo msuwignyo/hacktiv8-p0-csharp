@@ -10,10 +10,10 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static bool TentukanDeretGeometri(double[] arr)
         {
-            bool flag = true;
+            var flag = true;
             double scale = 0;
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (var i = 0; i < arr.Length - 1; i++)
             {
                 if (flag)
                 {
@@ -21,11 +21,8 @@ namespace hacktiv8_p0_csharp.Week03
                     flag = false;
                 }
 
-                double temp = arr[i + 1] / arr[i];
-                if (Math.Abs(temp - scale) > Double.Epsilon)
-                {
-                    return false;
-                }
+                var temp = arr[i + 1] / arr[i];
+                if (Math.Abs(temp - scale) > double.Epsilon) return false;
             }
 
             return true;

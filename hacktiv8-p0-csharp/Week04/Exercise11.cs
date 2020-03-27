@@ -2,13 +2,11 @@
 // Shopping Time!
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-shopping-time.md
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace hacktiv8_p0_csharp.Week04
 {
-    public class UserEx11
+    public class User2
     {
         public string MemberId { get; set; }
         public decimal Money { get; set; }
@@ -18,9 +16,9 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise11
     {
-        public static UserEx11 ShoppingTime(string memberId, decimal money)
+        public static User2 ShoppingTime(string memberId, decimal money)
         {
-            return new UserEx11();
+            return new User2();
         }
     }
 }

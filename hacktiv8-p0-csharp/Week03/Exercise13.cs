@@ -14,36 +14,22 @@ namespace hacktiv8_p0_csharp.Week03
             var indexO = new Queue<int>();
             var indexX = new Queue<int>();
 
-            for (int i = 0; i < arr.Length; i++)
+            for (var i = 0; i < arr.Length; i++)
             {
-                if (arr[i].Equals('o'))
-                {
-                    indexO.Enqueue(i);
-                }
+                if (arr[i].Equals('o')) indexO.Enqueue(i);
 
-                if (arr[i].Equals('x'))
-                {
-                    indexX.Enqueue(i);
-                }
+                if (arr[i].Equals('x')) indexX.Enqueue(i);
             }
 
-            int maxValue = int.MaxValue;
+            var maxValue = int.MaxValue;
             foreach (var itemO in indexO)
+            foreach (var itemX in indexX)
             {
-                foreach (var itemX in indexX)
-                {
-                    var temp = Math.Abs(itemO - itemX);
-                    if (temp < maxValue)
-                    {
-                        maxValue = temp;
-                    }
-                }
+                var temp = Math.Abs(itemO - itemX);
+                if (temp < maxValue) maxValue = temp;
             }
 
-            if (maxValue == int.MaxValue)
-            {
-                return 0;
-            }
+            if (maxValue == int.MaxValue) return 0;
 
             return maxValue;
         }

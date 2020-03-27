@@ -8,10 +8,10 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static bool TentukanDeretAritmatika(int[] arr)
         {
-            bool flag = true;
-            int selisih = 0;
+            var flag = true;
+            var selisih = 0;
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (var i = 0; i < arr.Length - 1; i++)
             {
                 if (flag)
                 {
@@ -19,11 +19,8 @@ namespace hacktiv8_p0_csharp.Week03
                     flag = false;
                 }
 
-                int temp = arr[i + 1] - arr[i];
-                if (temp != selisih)
-                {
-                    return false;
-                }
+                var temp = arr[i + 1] - arr[i];
+                if (temp != selisih) return false;
             }
 
             return true;

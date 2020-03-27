@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace hacktiv8_p0_csharp.tests.Week04
+﻿namespace hacktiv8_p0_csharp.tests.Week04
 {
-    class Exercise11
+    internal class Exercise11
     {
     }
 }

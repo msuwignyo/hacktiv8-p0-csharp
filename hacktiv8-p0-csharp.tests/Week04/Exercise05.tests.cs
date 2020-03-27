@@ -9,11 +9,11 @@ namespace hacktiv8_p0_csharp.tests.Week04
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { "wow", "xpx" };
-            yield return new object[] { "developer", "efwfmpqfs" };
-            yield return new object[] { "javascript", "kbwbtdsjqu" };
-            yield return new object[] { "keren", "lfsfo" };
-            yield return new object[] { "semangat", "tfnbohbu" };
+            yield return new object[] {"wow", "xpx"};
+            yield return new object[] {"developer", "efwfmpqfs"};
+            yield return new object[] {"javascript", "kbwbtdsjqu"};
+            yield return new object[] {"keren", "lfsfo"};
+            yield return new object[] {"semangat", "tfnbohbu"};
         }
 
         IEnumerator IEnumerable.GetEnumerator()

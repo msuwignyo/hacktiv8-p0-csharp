@@ -14,14 +14,15 @@ namespace hacktiv8_p0_csharp.Week03
             var odd = new Queue<int>();
             var multipleOfThree = new Queue<int>();
 
-            foreach (int item in arr)
-            {
-                if (item % 3 == 0) { multipleOfThree.Enqueue(item); }
-                else if (item % 2 == 0) { even.Enqueue(item); }
-                else { odd.Enqueue(item); }
-            }
+            foreach (var item in arr)
+                if (item % 3 == 0)
+                    multipleOfThree.Enqueue(item);
+                else if (item % 2 == 0)
+                    even.Enqueue(item);
+                else
+                    odd.Enqueue(item);
 
-            return new int[][]
+            return new[]
             {
                 even.ToArray(),
                 odd.ToArray(),

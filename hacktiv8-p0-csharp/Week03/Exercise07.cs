@@ -10,7 +10,6 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static int HitungJumlahKata(string kalimat)
         {
-
             return kalimat.Split(" ").Count();
         }
     }

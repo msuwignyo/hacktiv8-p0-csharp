@@ -14,13 +14,13 @@ namespace hacktiv8_p0_csharp.Week03
             var queue = new Queue<int>(arr);
             var result = new Queue<int>();
 
-            for (int i = 0; i < arr.Length; i++)
+            for (var i = 0; i < arr.Length; i++)
             {
                 // selalu ambil elemen pertama
-                int temp = queue.Dequeue();
+                var temp = queue.Dequeue();
 
                 // kalikan elemen yang tersisa
-                int buff = queue.Aggregate((total, next) => total * next);
+                var buff = queue.Aggregate((total, next) => total * next);
 
                 // masukkan hasil ke result
                 result.Enqueue(buff);

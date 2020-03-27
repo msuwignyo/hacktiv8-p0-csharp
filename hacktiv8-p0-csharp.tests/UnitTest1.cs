@@ -13,7 +13,10 @@ namespace hacktiv8_p0_csharp.tests
             yield return new object[] {"This is sample of my mistake"};
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public class Sample

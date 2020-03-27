@@ -2,17 +2,13 @@
 // Urutkan Abjad
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-urutkan-abjad.md
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace hacktiv8_p0_csharp
+namespace hacktiv8_p0_csharp.Week04
 {
     public class Exercise07
     {
-        public static string urutkanAbjad(string str)
+        public static string UrutkanAbjad(string str)
         {
-            return String.Empty;
+            return string.Empty;
         }
     }
 }

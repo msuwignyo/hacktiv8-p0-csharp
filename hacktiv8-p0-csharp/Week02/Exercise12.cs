@@ -8,8 +8,8 @@ namespace hacktiv8_p0_csharp.Week02
     {
         public static string KonversiMenit(int menit)
         {
-            int jam = menit / 60;
-            int sisa = menit % 60;
+            var jam = menit / 60;
+            var sisa = menit % 60;
 
             return $"{jam}:{sisa:D2}";
         }

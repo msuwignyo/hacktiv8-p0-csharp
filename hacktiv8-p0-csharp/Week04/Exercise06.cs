@@ -11,20 +11,13 @@ namespace hacktiv8_p0_csharp.Week04
     {
         public static int DigitPerkalianMinimum(int angka)
         {
-            if (angka == 1)
-            {
-                return 2;
-            }
+            if (angka == 1) return 2;
 
             var factors = new List<string>();
 
-            for (int i = 1; i < angka / 2; i++)
-            {
+            for (var i = 1; i < angka / 2; i++)
                 if (angka % i == 0)
-                {
                     factors.Add($"{i}{angka / i}");
-                }
-            }
 
             return factors.Min(item => item.Length);
         }

@@ -13,10 +13,7 @@ namespace hacktiv8_p0_csharp.Week03
         {
             double total = 0;
 
-            foreach (int item in arr)
-            {
-                total += item;
-            }
+            foreach (var item in arr) total += item;
 
             //int temp = total / arr.Length;
             return Math.Ceiling(total / arr.Length);

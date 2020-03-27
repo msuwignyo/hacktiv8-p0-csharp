@@ -2,7 +2,6 @@
 // Balik Kata
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-balik-kata.md
 
-using System;
 using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week02
@@ -11,19 +10,16 @@ namespace hacktiv8_p0_csharp.Week02
     {
         public static string BalikKata(string kata)
         {
-            string result = String.Empty;
+            var result = string.Empty;
 
-            for (int i = 0; i < kata.Length; i++)
-            {
-                result += kata[kata.Length - 1 - i];
-            }
+            for (var i = 0; i < kata.Length; i++) result += kata[kata.Length - 1 - i];
 
             return result;
         }
 
         public static string BalikKataLinq(string kata)
         {
-            return String.Concat(kata.Reverse());
+            return string.Concat(kata.Reverse());
         }
     }
 }

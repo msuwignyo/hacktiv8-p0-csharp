@@ -2,7 +2,6 @@
 // Palindrome
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-palindrome.md
 
-using System;
 using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week03
@@ -11,20 +10,16 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static bool Palindrome(string kata)
         {
+            var temp = string.Empty;
 
-            string temp = String.Empty;
-
-            for (int i = 0; i < kata.Length; i++)
-            {
-                temp += kata[kata.Length - 1 - i];
-            }
+            for (var i = 0; i < kata.Length; i++) temp += kata[kata.Length - 1 - i];
 
             return kata == temp;
         }
 
         public static bool PalindromeLinq(string kata)
         {
-            return String.Concat(kata.Reverse()) == kata;
+            return string.Concat(kata.Reverse()) == kata;
         }
     }
 }

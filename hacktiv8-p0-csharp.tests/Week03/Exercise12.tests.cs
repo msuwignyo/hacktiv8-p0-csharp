@@ -9,14 +9,17 @@ namespace hacktiv8_p0_csharp.tests.Week03
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { new double[] { 1, 3, 9, 27, 81 }, true };
-            yield return new object[] { new double[] { 2, 4, 8, 16, 32 }, true };
-            yield return new object[] { new double[] { 2, 4, 6, 8 }, false };
-            yield return new object[] { new double[] { 2, 6, 18, 54 }, true };
-            yield return new object[] { new double[] { 1, 2, 3, 4, 7, 9 }, false };
+            yield return new object[] {new double[] {1, 3, 9, 27, 81}, true};
+            yield return new object[] {new double[] {2, 4, 8, 16, 32}, true};
+            yield return new object[] {new double[] {2, 4, 6, 8}, false};
+            yield return new object[] {new double[] {2, 6, 18, 54}, true};
+            yield return new object[] {new double[] {1, 2, 3, 4, 7, 9}, false};
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 
     public class Exercise12
