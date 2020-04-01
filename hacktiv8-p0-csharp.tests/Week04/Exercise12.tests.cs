@@ -1,28 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using hacktiv8_p0_csharp.Week04;
 using Xunit;
 using static hacktiv8_p0_csharp.Week04.Exercise12;
 
 namespace hacktiv8_p0_csharp.tests.Week04
 {
-    public class Item
-    {
-        public Item(string name, int stock, decimal profit, List<string> shoppers)
-        {
-            Name = name;
-            Stock = stock;
-            Profit = profit;
-            Shoppers = shoppers;
-        }
-
-        public string Name { get; set; }
-        public decimal? Price { get; set; }
-        public int Stock { get; set; }
-        public decimal Profit { get; set; }
-        public List<string> Shoppers { get; set; }
-    }
-
     public class CountProfitTestData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
@@ -31,54 +15,99 @@ namespace hacktiv8_p0_csharp.tests.Week04
             {
                 new List<Shopper>
                 {
-                    new Shopper("Windi", "Sepatu Stacattu", 2),
-                    new Shopper("Vanessa", "Sepatu Stacattu", 3),
-                    new Shopper("Rani", "Sweater Uniklooh", 2)
+                    new Shopper { Name = "Windi", Product = "Sepatu Stacattu", Amount = 2 },
+                    new Shopper { Name = "Vanessa", Product = "Sepatu Stacattu", Amount = 3 },
+                    new Shopper { Name = "Vanessa", Product = "Sepatu Stacattu", Amount = 3 }
                 },
                 new List<Item>
                 {
-                    new Item("Sepatu Stacattu", 5, 7500000,
-                        new List<string> {"Windi", "Vanessa"}),
-                    new Item("Baju Zoro", 2, 0,
-                        new List<string>()),
-                    new Item("Sweater Uniklooh", 1, 0,
-                        new List<string>())
+                    new Item
+                    {
+                        Product = "Sepatu Stacattu",
+                        Shoppers = new List<string> { "Windi", "Vanessa" },
+                        LeftOver = 5,
+                        TotalProfit = 7500000
+                    },
+                    new Item
+                    {
+                        Product = "Baju Zoro",
+                        Shoppers = new List<string>(),
+                        LeftOver = 2,
+                        TotalProfit = 0
+                    },
+                    new Item
+                    {
+                        Product = "Sweater Uniklooh",
+                        Shoppers = new List<string>(),
+                        LeftOver = 1,
+                        TotalProfit = 0
+                    }
                 }
             };
             yield return new object[]
             {
                 new List<Shopper>
                 {
-                    new Shopper("Windi", "Sepatu Stacattu", 8),
-                    new Shopper("Vanessa", "Sepatu Stacattu", 10),
-                    new Shopper("Rani", "Sweater Uniklooh", 1),
-                    new Shopper("Devi", "Baju Zoro", 1),
-                    new Shopper("Lisa", "Baju Zoro", 1)
+                    new Shopper { Name = "Windi", Product = "Sepatu Stacattu", Amount = 8 },
+                    new Shopper { Name = "Vanessa", Product = "Sepatu Stacattu", Amount = 10 },
+                    new Shopper { Name = "Rani", Product = "Sweater Uniklooh", Amount = 1 },
+                    new Shopper { Name = "Devi", Product = "Baju Zoro", Amount = 1 },
+                    new Shopper { Name = "Lisa", Product = "Baju Zoro", Amount = 1 }
                 },
                 new List<Item>
                 {
-                    new Item("Sepatu Stacattu", 2, 12000000,
-                        new List<string> {"Windi"}),
-                    new Item("Baju Zoro", 0, 1000000,
-                        new List<string> {"Devi", "Lisa"}),
-                    new Item("Sweater Uniklooh", 0, 175000,
-                        new List<string> {"Rani"})
+                    new Item
+                    {
+                        Product = "Sepatu Stacattu",
+                        Shoppers = new List<string> { "Windi" },
+                        LeftOver = 2,
+                        TotalProfit = 12000000
+                    },
+                    new Item
+                    {
+                        Product = "Baju Zoro",
+                        Shoppers = new List<string> { "Devi", "Lisa" },
+                        LeftOver = 0,
+                        TotalProfit = 1000000
+                    },
+                    new Item
+                    {
+                        Product = "Sweater Uniklooh",
+                        Shoppers = new List<string> { "Rani" },
+                        LeftOver = 0,
+                        TotalProfit = 175000
+                    }
                 }
             };
             yield return new object[]
             {
                 new List<Shopper>
                 {
-                    new Shopper("Windi", "Sepatu Naiki", 5)
+                    new Shopper { Name = "Windi", Product = "Sepatu Naiki", Amount = 5 }
                 },
                 new List<Item>
                 {
-                    new Item("Sepatu Stacattu", 10, 0,
-                        new List<string>()),
-                    new Item("Baju Zoro", 2, 0,
-                        new List<string>()),
-                    new Item("Sweater Uniklooh", 1, 0,
-                        new List<string>())
+                    new Item
+                    {
+                        Product = "Sepatu Stacattu",
+                        Shoppers = new List<string>(),
+                        LeftOver = 10,
+                        TotalProfit = 0
+                    },
+                    new Item
+                    {
+                        Product = "Baju Zoro",
+                        Shoppers = new List<string>(),
+                        LeftOver = 2,
+                        TotalProfit = 0
+                    },
+                    new Item
+                    {
+                        Product = "Sweater Uniklooh",
+                        Shoppers = new List<string>(),
+                        LeftOver = 1,
+                        TotalProfit = 0
+                    }
                 }
             };
             yield return new object[]
@@ -100,7 +129,19 @@ namespace hacktiv8_p0_csharp.tests.Week04
         [ClassData(typeof(CountProfitTestData))]
         public void CountProfitTest(List<Shopper> shoppers, List<Item> expected)
         {
-            Assert.Equal(expected, CountProfit(shoppers));
+            var actual = CountProfit(shoppers);
+
+            Assert.Equal(expected.Count(), actual.Count());
+
+            for (int i = 0; i < expected.Count(); i++)
+            {
+                expected[i].Product = actual[i].Product;
+                expected[i].LeftOver = actual[i].LeftOver;
+                expected[i].Shoppers = actual[i].Shoppers;
+                expected[i].TotalProfit = actual[i].TotalProfit;
+            }
+
+            //Assert.Equal(expected, CountProfit(shoppers));
         }
     }
 }

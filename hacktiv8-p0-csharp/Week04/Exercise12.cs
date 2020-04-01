@@ -2,55 +2,73 @@
 // Toko X
 // https://github.com/hacktiv8/phase-0-activities/blob/master/modules/challenge-toko-x.md
 
-#nullable enable
 using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week04
 {
     public class Item
     {
-        public Item(string name, decimal price, int stock)
-        {
-            Name = name;
-            Price = price;
-            Stock = stock;
-        }
-
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Stock { get; set; }
-        public decimal? Profit { get; set; }
-        public List<string>? Shoppers { get; set; }
+        public string Product { get; set; }
+        public List<string> Shoppers { get; set; }
+        public int LeftOver { get; set; }
+        public decimal TotalProfit { get; set; }
     }
 
     public class Shopper
     {
-        public Shopper(string name, string product, int amount)
-        {
-            Name = name;
-            Product = product;
-            Amount = amount;
-        }
-
-        private string Name { get; set; }
-        private string Product { get; set; }
-        private int Amount { get; set; }
+        public string Name { get; set; }
+        public string Product { get; set; }
+        public int Amount { get; set; }
     }
 
     public class Exercise12
     {
-        public static List<object> CountProfit(List<Shopper> shoppers)
+        public static List<Item> CountProfit(List<Shopper> shoppers)
         {
-            var listBarang = new List<Item>
+            if (shoppers.Count() == 0)
             {
-                new Item("Sepatu Stacattu", 1500000, 10),
-                new Item("Baju Zoro", 500000, 2),
-                new Item("Sweater Uniklooh", 175000, 1)
-            };
-            
-            // TODO: kerjakan exercise 12!
+                return new List<Item>();
+            }
 
-            return new List<object>();
+            var listBarang = new List<Tuple<string, decimal, int>>
+            {
+                new Tuple<string, decimal, int>("Sepatu Stacattu", 1500000m, 10),
+                new Tuple<string, decimal, int>("Baju Zoro", 500000m, 2),
+                new Tuple<string, decimal, int>("Sweater Uniklooh", 175000m, 1)
+            };
+
+            var result = new List<Item>();
+
+            foreach (var barang in listBarang)
+            {
+                var (product, _, leftOver) = barang;
+
+                result.Add(new Item
+                {
+                    Product = product,
+                    Shoppers = new List<string>(),
+                    LeftOver = leftOver,
+                    TotalProfit = 0,
+                });
+            }
+
+            foreach (var shopper in shoppers)
+            {
+                for (int i = 0; i < result.Count(); i++)
+                {
+                    if (result[i].Product == shopper.Product &&
+                        result[i].LeftOver - shopper.Amount >= 0)
+                    {
+                        result[i].LeftOver -= shopper.Amount;
+                        result[i].Shoppers?.Add(shopper?.Name);
+                        result[i].TotalProfit += listBarang[i].Item2 * shopper.Amount;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }
