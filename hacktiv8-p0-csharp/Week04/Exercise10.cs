@@ -19,7 +19,7 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise10
     {
-        public static List<User1> ChangeMe(List<Tuple<string, string, string, int?>> arr)
+        public static List<User1> ChangeMe(IEnumerable<Tuple<string, string, string, int?>> arr)
         {
             var result = new List<User1>();
 
@@ -27,15 +27,15 @@ namespace hacktiv8_p0_csharp.Week04
             {
                 var temp = new User1();
 
-                var (FirstName, LastName, Gender, YearOfBirth) = user;
+                var (firstName, lastName, gender, yearOfBirth) = user;
 
-                temp.FirstName = FirstName;
-                temp.LastName = LastName;
-                temp.Gender = Gender;
+                temp.FirstName = firstName;
+                temp.LastName = lastName;
+                temp.Gender = gender;
 
-                temp.Age = YearOfBirth == null
+                temp.Age = yearOfBirth == null
                     ? null
-                    : DateTime.Now.Year - YearOfBirth;
+                    : DateTime.Now.Year - yearOfBirth;
 
                 result.Add(temp);
             }

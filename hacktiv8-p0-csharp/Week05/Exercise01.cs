@@ -11,27 +11,29 @@ namespace hacktiv8_p0_csharp.Week05
 {
     public class Exercise01
     {
-        public static List<int> Sorting(List<int> arrNumber)
+        private static IEnumerable<int> Sorting(IEnumerable<int> arrNumber)
         {
             return arrNumber.OrderBy(item => item).ToList();
         }
 
-        public static string GetTotal(List<int> arrNumber)
+        private static string GetTotal(IEnumerable<int> arrNumber)
         {
-            if (arrNumber.Count() == 0)
+            var arrNumberList = arrNumber.ToList();
+            
+            if (!arrNumberList.Any())
             {
                 return string.Empty;
             }
 
-            var highestNum = arrNumber.Max();
+            var highestNum = arrNumberList.Max();
 
-            var freqHighestNum = arrNumber.Count(item => 
+            var freqHighestNum = arrNumberList.Count(item => 
                 item == highestNum);
 
             return $"angka paling besar adalah {highestNum} dan jumlah kemunculan sebanyak {freqHighestNum} kali";
         }
 
-        public static string MostFrequentLargestNumbers(List<int> arrNumber)
+        public static string MostFrequentLargestNumbers(IEnumerable<int> arrNumber)
         {
             var listSort = Sorting(arrNumber);
             var countHighest = GetTotal(listSort);

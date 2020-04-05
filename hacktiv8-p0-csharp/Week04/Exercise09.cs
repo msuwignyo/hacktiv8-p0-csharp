@@ -20,7 +20,7 @@ namespace hacktiv8_p0_csharp.Week04
 
             var temp = num.ToCharArray();
 
-            for (int i = 0; i < temp.Length; i++)
+            for (var i = 0; i < temp.Length; i++)
             {
                 switch (temp[i])
                 {
@@ -30,23 +30,10 @@ namespace hacktiv8_p0_csharp.Week04
                     case 'b':
                         dict.locB.Add(i);
                         break;
-                    default:
-                        break;
                 }
             }
 
-            foreach (var itemA in dict.locA)
-            {
-                foreach (var itemB in dict.locB)
-                {
-                    if (Math.Abs(itemB - itemA) == 4)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return dict.locA.Any(itemA => dict.locB.Any(itemB => Math.Abs(itemB - itemA) == 4));
         }
     }
 }

@@ -25,9 +25,10 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise12
     {
-        public static List<Item> CountProfit(List<Shopper> shoppers)
+        public static List<Item> CountProfit(IEnumerable<Shopper> shoppers)
         {
-            if (shoppers.Count() == 0)
+            var shopperList = shoppers.ToList();
+            if (!shopperList.Any())
             {
                 return new List<Item>();
             }
@@ -54,17 +55,18 @@ namespace hacktiv8_p0_csharp.Week04
                 });
             }
 
-            foreach (var shopper in shoppers)
+            foreach (var shopper in shopperList)
             {
-                for (int i = 0; i < result.Count(); i++)
+                for (var i = 0; i < result.Count(); i++)
                 {
-                    if (result[i].Product == shopper.Product &&
-                        result[i].LeftOver - shopper.Amount >= 0)
+                    if (result[i].Product != shopper.Product || result[i].LeftOver - shopper.Amount < 0)
                     {
-                        result[i].LeftOver -= shopper.Amount;
-                        result[i].Shoppers?.Add(shopper?.Name);
-                        result[i].TotalProfit += listBarang[i].Item2 * shopper.Amount;
+                        continue;
                     }
+
+                    result[i].LeftOver -= shopper.Amount;
+                    result[i].Shoppers?.Add(shopper?.Name);
+                    result[i].TotalProfit += listBarang[i].Item2 * shopper.Amount;
                 }
             }
 

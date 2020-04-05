@@ -10,7 +10,7 @@ namespace hacktiv8_p0_csharp.Week05
 {
     public class Exercise06
     {
-        public static int Attack(int damage)
+        private static int Attack(int damage)
         {
             return damage - 2;
         }

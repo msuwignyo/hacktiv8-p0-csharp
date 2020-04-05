@@ -17,7 +17,7 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise15
     {
-        public static Dictionary<string, (string, int)> HighestScore(List<User3> students)
+        public static Dictionary<string, (string, int)> HighestScore(IEnumerable<User3> students)
         {
             var temp = new Dictionary<string, (string, int)>();
 

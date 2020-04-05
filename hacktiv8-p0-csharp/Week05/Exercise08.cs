@@ -13,7 +13,7 @@ namespace hacktiv8_p0_csharp.Week05
     {
         public static string HapusSimbol(string str)
         {
-            var pattern = @"\W";
+            const string pattern = @"\W";
             return Regex.Replace(str, pattern, @"");
         }
     }

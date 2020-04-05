@@ -11,16 +11,6 @@ namespace hacktiv8_p0_csharp.Week03
         private static bool IsPalindrome(int num)
         {
             var temp = num.ToString();
-            var numReverse = string.Empty;
-
-            for (var i = 0; i < temp.Length; i++) numReverse += temp[temp.Length - 1 - i];
-
-            return numReverse == temp;
-        }
-
-        private static bool IsPalindromeLinq(int num)
-        {
-            var temp = num.ToString();
 
             return string.Concat(temp.Reverse()) == temp;
         }
@@ -28,9 +18,25 @@ namespace hacktiv8_p0_csharp.Week03
         public static int AngkaPalindrome(int num)
         {
             num++;
-            while (!IsPalindrome(num)) num++;
+            while (!IsPalindrome(num))
+            {
+                num++;
+            }
 
             return num;
         }
+        
+        // private static bool IsPalindrome(int num)
+        // {
+        //     var temp = num.ToString();
+        //     var numReverse = string.Empty;
+        //
+        //     for (var i = 0; i < temp.Length; i++)
+        //     {
+        //         numReverse += temp[temp.Length - 1 - i];
+        //     }
+        //
+        //     return numReverse == temp;
+        // }
     }
 }

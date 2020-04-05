@@ -9,56 +9,50 @@ namespace hacktiv8_p0_csharp.Week05
 {
     public class Exercise02
     {
-        public static string ChangeVocals(string str)
+        private static string ChangeVocals(string str)
         {
-            var result = string.Empty;
-
             var vocalChar = new char[]
             {
                 'a', 'i', 'u', 'e', 'o',
                 'A', 'i', 'U', 'E', 'O'
             };
 
-            foreach (var character in str)
+            return string.Concat(str.Select(character =>
             {
-                result += vocalChar.Any(item => item == character)
-                    ? (char)((int)character + 1)
+                return vocalChar.Any(item => item == character)
+                    ? (char) ((int) character + 1)
                     : character;
-            }
-
-            return result;
+            }));
         }
 
-        public static string ReverseWord(string str)
+        private static string ReverseWord(string str)
         {
             return string.Concat(str.Reverse());
         }
 
-        public static string SetLowerUpperCase(string str)
+        private static string SetLowerUpperCase(string str)
         {
-            return string.Concat(
-                str.ToCharArray()
-                    .Select(item =>
+            return string.Concat(str.ToCharArray()
+                .Select(item =>
+                {
+                    if (char.IsLower(item))
                     {
-                        if (Char.IsLower(item))
-                        {
-                            return Char.ToUpper(item);
-                        }
+                        return char.ToUpper(item);
+                    }
 
-                        if (Char.IsUpper(item))
-                        {
-                            return Char.ToLower(item);
-                        }
+                    if (char.IsUpper(item))
+                    {
+                        return char.ToLower(item);
+                    }
 
-                        return item;
-                    }));
+                    return item;
+                }));
         }
 
-        public static string RemoveSpaces(string str)
+        private static string RemoveSpaces(string str)
         {
-            return string.Concat(
-                str.ToCharArray()
-                    .Where(item => item != ' '));
+            return string.Concat(str.ToCharArray()
+                .Where(item => item != ' '));
         }
 
         public static string PasswordGenerator(string name)

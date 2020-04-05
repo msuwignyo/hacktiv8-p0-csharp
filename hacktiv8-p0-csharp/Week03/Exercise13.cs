@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week03
 {
@@ -16,22 +17,30 @@ namespace hacktiv8_p0_csharp.Week03
 
             for (var i = 0; i < arr.Length; i++)
             {
-                if (arr[i].Equals('o')) indexO.Enqueue(i);
+                if (arr[i].Equals('o'))
+                {
+                    indexO.Enqueue(i);
+                }
 
-                if (arr[i].Equals('x')) indexX.Enqueue(i);
+                if (arr[i].Equals('x'))
+                {
+                    indexX.Enqueue(i);
+                }
             }
 
-            var maxValue = int.MaxValue;
-            foreach (var itemO in indexO)
-            foreach (var itemX in indexX)
-            {
-                var temp = Math.Abs(itemO - itemX);
-                if (temp < maxValue) maxValue = temp;
-            }
+            var maxValue = indexO.Aggregate(int.MaxValue,
+                (current,
+                    itemO) => indexX.Select(itemX => Math.Abs(itemO - itemX))
+                    .Concat(new[]
+                    {
+                        current
+                    })
+                    .Min());
 
-            if (maxValue == int.MaxValue) return 0;
 
-            return maxValue;
+            return maxValue == int.MaxValue
+                ? 0
+                : maxValue;
         }
     }
 }

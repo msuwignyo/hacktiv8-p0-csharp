@@ -17,7 +17,7 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise16
     {
-        public static Dictionary<string, List<(string, int)>> Graduates(List<User4> students)
+        public static Dictionary<string, List<(string, int)>> Graduates(IEnumerable<User4> students)
         {
             var temp = new Dictionary<string, List<(string, int)>>();
 

@@ -11,7 +11,7 @@ namespace hacktiv8_p0_csharp.Week04
     {
         public static string UrutkanAbjad(string str)
         {
-            return String.Concat(str.ToCharArray().OrderBy(ch => ch));
+            return string.Concat(str.ToCharArray().OrderBy(ch => ch));
         }
     }
 }

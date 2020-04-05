@@ -13,7 +13,7 @@ namespace hacktiv8_p0_csharp.Week05
     {
         public static int CariPelaku(string str)
         {
-            var pattern = @"abc";
+            const string pattern = @"abc";
             var result = Regex.Matches(str, pattern);
             
             return result.Count;

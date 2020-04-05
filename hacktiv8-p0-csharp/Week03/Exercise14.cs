@@ -15,12 +15,20 @@ namespace hacktiv8_p0_csharp.Week03
             var multipleOfThree = new Queue<int>();
 
             foreach (var item in arr)
+            {
                 if (item % 3 == 0)
+                {
                     multipleOfThree.Enqueue(item);
+                }
                 else if (item % 2 == 0)
+                {
                     even.Enqueue(item);
+                }
                 else
+                {
                     odd.Enqueue(item);
+                }
+            }
 
             return new[]
             {

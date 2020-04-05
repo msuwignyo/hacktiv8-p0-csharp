@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace hacktiv8_p0_csharp.Week04
@@ -17,20 +18,7 @@ namespace hacktiv8_p0_csharp.Week04
                 throw new Exception("No number");
             }
 
-            var result = 0;
-
-            foreach (var item in arr)
-            {
-                foreach (var item2 in item)
-                {
-                    foreach (var item3 in item2)
-                    {
-                        result += item3;
-                    }
-                }
-            }
-
-            return result;
+            return arr.Sum(item => item.Sum(item2 => item2.Sum()));
         }
     }
 }

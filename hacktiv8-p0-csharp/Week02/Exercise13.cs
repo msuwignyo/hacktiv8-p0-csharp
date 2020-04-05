@@ -10,28 +10,31 @@ namespace hacktiv8_p0_csharp.Week02
     {
         public static bool XO(string str)
         {
-            var countX = 0;
-            var countO = 0;
-
-            foreach (var item in str)
-            {
-                if (item == 'x') countX++;
-
-                if (item == 'o') countO++;
-            }
-
-            return countX == countO;
-        }
-
-        public static bool XOLinq(string str)
-        {
-            var freqTable = str.GroupBy(item => item, (key, result) => new
-            {
-                Character = key,
-                Total = result.Count()
-            }).ToDictionary(item => item.Character);
+            var freqTable = str.GroupBy(item => item,
+                    (key,
+                        result) => new
+                    {
+                        Character = key,
+                        Total = result.Count()
+                    })
+                .ToDictionary(item => item.Character);
 
             return freqTable['x'].Total == freqTable['o'].Total;
         }
+        
+        // public static bool XO(string str)
+        // {
+        //     var countX = 0;
+        //     var countO = 0;
+        //
+        //     foreach (var item in str)
+        //     {
+        //         if (item == 'x') countX++;
+        //
+        //         if (item == 'o') countO++;
+        //     }
+        //
+        //     return countX == countO;
+        // }
     }
 }

@@ -10,13 +10,11 @@ namespace hacktiv8_p0_csharp.Week04
     {
         public static double CariMedian(int[] arr)
         {
-            var orderedArr = arr
-                .OrderBy(item => item)
+            var orderedArr = arr.OrderBy(item => item)
                 .ToList();
-
+            
             return orderedArr.Count % 2 == 0
-                ? 0.5 * (orderedArr[orderedArr.Count / 2 - 1] +
-                         orderedArr[orderedArr.Count / 2])
+                ? 0.5 * (orderedArr[orderedArr.Count / 2 - 1] + orderedArr[orderedArr.Count / 2])
                 : orderedArr[orderedArr.Count / 2];
         }
     }

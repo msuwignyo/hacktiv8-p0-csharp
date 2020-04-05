@@ -19,7 +19,7 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise14
     {
-        public static List<DataPenumpang> NaikAngkot(List<(string, string, string)> arrPenumpang)
+        public static List<DataPenumpang> NaikAngkot(IEnumerable<(string, string, string)> arrPenumpang)
         {
             var rute = new string[] { "A", "B", "C", "D", "E", "F" };
 

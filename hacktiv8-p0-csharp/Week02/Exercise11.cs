@@ -10,16 +10,19 @@ namespace hacktiv8_p0_csharp.Week02
     {
         public static string BalikKata(string kata)
         {
-            var result = string.Empty;
-
-            for (var i = 0; i < kata.Length; i++) result += kata[kata.Length - 1 - i];
-
-            return result;
-        }
-
-        public static string BalikKataLinq(string kata)
-        {
             return string.Concat(kata.Reverse());
         }
+        
+        // public static string BalikKata(string kata)
+        // {
+        //     var result = string.Empty;
+        //
+        //     for (var i = 0; i < kata.Length; i++)
+        //     {
+        //         result += kata[kata.Length - 1 - i];
+        //     }
+        //
+        //     return result;
+        // }
     }
 }

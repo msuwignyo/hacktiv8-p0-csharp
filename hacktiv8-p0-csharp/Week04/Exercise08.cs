@@ -11,11 +11,10 @@ namespace hacktiv8_p0_csharp.Week04
     {
         public static string TukarBesarKecil(string kalimat)
         {
-            return String.Concat(
-                kalimat.ToCharArray().Select(ch =>
-                    Char.IsUpper(ch)
-                        ? Char.ToLower(ch)
-                        : char.ToUpper(ch)));
+            return string.Concat(kalimat.ToCharArray()
+                .Select(ch => char.IsUpper(ch)
+                    ? char.ToLower(ch)
+                    : char.ToUpper(ch)));
         }
     }
 }

@@ -11,10 +11,7 @@ namespace hacktiv8_p0_csharp.Week04
         public static string UbahHuruf(string kata)
         {
             return string.Join("",
-                kata.Select(item =>
-                    (char) (((int) item - 'a' + 1) % ('z' - 'a') + 'a')
-                )
-            );
+                kata.Select(item => (char) (((int) item - 'a' + 1) % ('z' - 'a') + 'a')));
         }
     }
 }

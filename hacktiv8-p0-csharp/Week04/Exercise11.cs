@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace hacktiv8_p0_csharp.Week04
 {
@@ -23,7 +24,7 @@ namespace hacktiv8_p0_csharp.Week04
 
     public class Exercise11
     {
-        public static List<ShopItem> itemList = new List<ShopItem>
+        private static readonly List<ShopItem> ItemList = new List<ShopItem>
         {
             new ShopItem { Name = "Sepatu Stacattu", Price =  1500000 },
             new ShopItem { Name = "Baju Zoro", Price = 500000 },
@@ -52,13 +53,10 @@ namespace hacktiv8_p0_csharp.Week04
 
             var listPurchased = new List<string>();
 
-            foreach (var item in itemList)
+            foreach (var item in ItemList.Where(item => money >= item.Price))
             {
-                if (money >= item.Price)
-                {
-                    listPurchased.Add(item.Name);
-                    money -= item.Price;
-                }
+                listPurchased.Add(item.Name);
+                money -= item.Price;
             }
 
             user.ListPurchased = listPurchased;
