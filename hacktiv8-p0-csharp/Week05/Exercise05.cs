@@ -14,8 +14,8 @@ namespace hacktiv8_p0_csharp.Week05
         public static int KaliTerusRekursif(int angka)
         {
             var result = angka.ToString()
-                .Aggregate(1, (acc, item) =>
-                    acc * int.Parse(item.ToString()));
+                .Aggregate(1, (acc, curr) =>
+                    acc * int.Parse(curr.ToString()));
 
             return angka < 10
                 ? result
