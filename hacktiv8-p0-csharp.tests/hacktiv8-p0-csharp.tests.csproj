@@ -18,8 +18,4 @@
     <ProjectReference Include="..\hacktiv8-p0-csharp\hacktiv8-p0-csharp.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Week05\" />
-  </ItemGroup>
-
 </Project>

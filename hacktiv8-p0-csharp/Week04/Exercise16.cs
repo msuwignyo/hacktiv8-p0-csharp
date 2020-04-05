@@ -19,7 +19,22 @@ namespace hacktiv8_p0_csharp.Week04
     {
         public static Dictionary<string, List<(string, int)>> Graduates(List<User4> students)
         {
-            return null;
+            var temp = new Dictionary<string, List<(string, int)>>();
+
+            foreach (var student in students)
+            {
+                if (!temp.ContainsKey(student.Class))
+                {
+                    temp[student.Class] = new List<(string, int)>();
+                }
+
+                if (student.Score > 75)
+                {
+                    temp[student.Class].Add((student.Name, student.Score));
+                }
+            }
+
+            return temp;
         }
     }
 }

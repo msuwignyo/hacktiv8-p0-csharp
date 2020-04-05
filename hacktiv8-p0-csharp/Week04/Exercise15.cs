@@ -15,11 +15,30 @@ namespace hacktiv8_p0_csharp.Week04
         public string Class { get; set; }
     }
 
-    class Exercise15
+    public class Exercise15
     {
-        public static Dictionary<string, (string, string)> HighestScore(List<User3> students)
+        public static Dictionary<string, (string, int)> HighestScore(List<User3> students)
         {
-            return null;
+            var temp = new Dictionary<string, (string, int)>();
+
+            foreach (var item in students)
+            {
+                if (temp.ContainsKey(item.Class))
+                {
+                    var (_, score) = temp[item.Class];
+                    
+                    if (item.Score > score)
+                    {
+                        temp[item.Class] = (item.Name, item.Score);
+                    }
+                }
+                else
+                {
+                    temp[item.Class] = (item.Name, item.Score);
+                }
+            }
+
+            return temp;
         }
     }
 }

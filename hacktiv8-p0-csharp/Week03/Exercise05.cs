@@ -10,15 +10,13 @@ namespace hacktiv8_p0_csharp.Week03
     {
         public static bool Palindrome(string kata)
         {
-            var temp = string.Empty;
+            /*
+             * var temp = string.Empty;
+             * for (var i = 0; i < kata.Length; i++) temp += kata[kata.Length - 1 - i];
+             * return kata == temp;
+             * 
+             */
 
-            for (var i = 0; i < kata.Length; i++) temp += kata[kata.Length - 1 - i];
-
-            return kata == temp;
-        }
-
-        public static bool PalindromeLinq(string kata)
-        {
             return string.Concat(kata.Reverse()) == kata;
         }
     }
